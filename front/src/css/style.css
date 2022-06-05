@@ -9,12 +9,13 @@
   width: 95vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 
 .btn {
   --accent: grey;
+  align-self: center;
+  width: 30vw;
   margin-top: 5vh;
   cursor: pointer;
   background: transparent;
@@ -31,6 +32,10 @@
 li {
   list-style-type: none;
   margin: 0;
+  border: 1.5px solid grey;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 3vh;
 }
 
 .btn:hover {

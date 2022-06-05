@@ -39,13 +39,13 @@ const CommitList = () => {
     }
   //s()
   }); 
-
+const a = ["aa", "bbbbbbbb", "cccccc"]
   return (
     <div className="container">
       <button className="btn" onClick={async() => {await getCommits()}}>Show me the commits!</button>
       <ul>
 
-      {commits?.map((commit, i) => (
+      {a?.map((commit, i) => (
         <li key={i}>{commit}</li>
         ))}
         </ul>
