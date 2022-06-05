@@ -9,7 +9,7 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-  @Get('commits')
+  @Get('/commits')
   getCommits(): string {
     return this.appService.getHello();
   }
