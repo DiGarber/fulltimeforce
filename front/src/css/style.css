@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-container {
+  text-align: right;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn {
+  --accent: grey;
+  cursor: pointer;
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 90%;
+  letter-spacing: 1px;
+  transition: 0.5s all;
+  outline: none;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.edit.btn {
+  --accent: rgb(81, 250, 81);
+  margin-bottom: 5vh;
+}
+
+.delete.btn {
+  --accent: red;
+  margin-left: 10px;
+}
+
+.view.btn {
+  --accent: blue;
+  margin-left: 10px;
+}
+
+

@@ -1,28 +1,37 @@
 import { useState, useEffect } from "react";
-
-import { useForm, Controller } from "react-hook-form";
-import ReactSelect from "react-select";
 import { useNavigate } from "react-router";
-
-import "../../css/style.css";
 import { fetchCommits } from "../../utils/http";
 
+import "../../css/style.css";
+
 const CommitList = () => {
-  const [commits, setCommits] = useState("");
+  const [commits, setCommits] = useState([]);
 
-  const navigate = useNavigate();
-
-  useEffect(() => {
+  const getCommits = async() => {
     try {
-      const data = fetchCommits();
-      setCommits(data);
+      const data = await fetchCommits();
+      const commitMessages = getCommitsMessages(data.data)
+      setCommits(commitMessages);
     } catch (e) {
       alert(e.message);
     }
+  }
+
+  const getCommitsMessages = (commitArray) => {
+    const messages = commitArray.map(commit => commit.commit.message)
+    return messages
+  }
+
+  useEffect(() => {
+    async function s() {
+      //await getCommits()
+    }
+    s()
   }, []);
 
   return (
     <div className="container">
+      <button onClick={async() => {await getCommits()}}>Show me the commits!</button>
       {commits?.map((commit, i) => (
         <p key={i}>{commit}</p>
       ))}

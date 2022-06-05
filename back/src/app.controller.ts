@@ -11,6 +11,7 @@ export class AppController {
   }
   @Get('/commits')
   getCommits(): string {
+    console.log('Hey');
     return this.appService.getCommits();
   }
 }
