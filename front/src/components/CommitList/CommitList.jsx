@@ -37,15 +37,18 @@ const CommitList = () => {
     async function s() {
       await getCommitsB()
     }
-    s()
+  //s()
   }); 
 
   return (
     <div className="container">
-      <button onClick={async() => {await getCommits()}}>Show me the commits!</button>
+      <button className="btn" onClick={async() => {await getCommits()}}>Show me the commits!</button>
+      <ul>
+
       {commits?.map((commit, i) => (
-        <p key={i}>{commit}</p>
-      ))}
+        <li key={i}>{commit}</li>
+        ))}
+        </ul>
     </div>
   );
 };
