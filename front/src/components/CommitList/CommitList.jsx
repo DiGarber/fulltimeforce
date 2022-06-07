@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router";
 import { fetchCommits } from "../../utils/http";
 
 import "../../css/style.css";
@@ -7,7 +6,6 @@ import "../../css/style.css";
 const CommitList = () => {
   const [commits, setCommits] = useState(() => []);
 
-  
   const getCommits = useCallback(async () => {
     try {
       const data = await fetchCommits();
@@ -26,7 +24,7 @@ const CommitList = () => {
     const asyncGetCommits = async () => {
       await getCommits();
     };
-    asyncGetCommits()
+    asyncGetCommits();
   }, [getCommits]);
 
   return (

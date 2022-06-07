@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import { Redirect } from "react-router";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import CommitList from "./CommitList/CommitList";
 
 import "../css/style.css";
 
-const Layout = () => {
+const Index = () => {
   const [auth, setAuth] = useState({});
   const [isClient, setIsClient] = useState(false);
 
@@ -24,4 +22,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Index;
