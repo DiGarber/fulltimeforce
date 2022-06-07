@@ -5,7 +5,7 @@ import { fetchCommits } from "../../utils/http";
 import "../../css/style.css";
 
 const CommitList = () => {
-  const [commits, setCommits] = useState([]);
+  const [commits, setCommits] = useState(() => []);
 
   const getCommits = async() => {
     try {
@@ -38,7 +38,7 @@ const CommitList = () => {
       await getCommitsB()
     }
   //s()
-  }); 
+  },[]); 
 const a = ["aa", "bbbbbbbb", "cccccc"]
   return (
     <div className="container">

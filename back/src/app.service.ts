@@ -8,9 +8,8 @@ export class AppService {
   }
   getCommits(): any {
     const commits = axios
-      .get('https://api.github.com/repos/harrisiirak/cron-parser/commits')
+      .get('https://api.github.com/repos/DiGarber/fulltimeforce/commits')
       .then((data) => {
-        console.log(data.data[0].commit.message);
         return data.data;
       })
       .catch((e) => {
