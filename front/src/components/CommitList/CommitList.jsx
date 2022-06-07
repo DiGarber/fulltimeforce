@@ -7,48 +7,43 @@ import "../../css/style.css";
 const CommitList = () => {
   const [commits, setCommits] = useState(() => []);
 
-  const getCommits = async() => {
+  
+  const getCommits = useCallback(async () => {
     try {
-      const {data} = await fetchCommits();
-      const commitMessages = getCommitsMessages(data)
+      const data = await fetchCommits();
+      const commitMessages = getCommitsMessages(data.data);
       setCommits(commitMessages);
     } catch (e) {
       alert(e.message);
     }
-  }
-  const getCommitsB = useCallback(
-    async() => {
-      try {
-        const data = await fetchCommits();
-        const commitMessages = getCommitsMessages(data.data)
-        setCommits(commitMessages);
-      } catch (e) {
-        alert(e.message);
-      }
-    },
-    [],
-  );
+  }, []);
   const getCommitsMessages = (commitArray = []) => {
-    const messages = commitArray.map(commit => commit?.commit?.message)
-    return messages
-  }
+    const messages = commitArray.map((commit) => commit?.commit?.message);
+    return messages;
+  };
 
   useEffect(() => {
-    async function s() {
-      await getCommitsB()
-    }
-  //s()
-  },[]); 
-const a = ["aa", "bbbbbbbb", "cccccc"]
+    const asyncGetCommits = async () => {
+      await getCommits();
+    };
+    asyncGetCommits()
+  }, [getCommits]);
+
   return (
     <div className="container">
-      <button className="btn" onClick={async() => {await getCommits()}}>Show me the commits!</button>
+      <button
+        className="btn"
+        onClick={async () => {
+          await getCommits();
+        }}
+      >
+        Refresh commits!
+      </button>
       <ul>
-
-      {commits?.map((commit, i) => (
-        <li key={i}>{commit}</li>
+        {commits?.map((commit, i) => (
+          <li key={i}>{commit}</li>
         ))}
-        </ul>
+      </ul>
     </div>
   );
 };
