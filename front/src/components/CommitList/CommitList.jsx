@@ -45,7 +45,7 @@ const a = ["aa", "bbbbbbbb", "cccccc"]
       <button className="btn" onClick={async() => {await getCommits()}}>Show me the commits!</button>
       <ul>
 
-      {a?.map((commit, i) => (
+      {commits?.map((commit, i) => (
         <li key={i}>{commit}</li>
         ))}
         </ul>

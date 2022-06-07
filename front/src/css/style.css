@@ -13,7 +13,7 @@
 }
 
 .btn {
-  --accent: grey;
+  --accent: rgb(22, 198, 93);
   align-self: center;
   width: 30vw;
   margin-top: 5vh;
@@ -43,19 +43,6 @@ li {
   color: white;
 }
 
-.edit.btn {
-  --accent: rgb(81, 250, 81);
-  margin-bottom: 5vh;
-}
 
-.delete.btn {
-  --accent: red;
-  margin-left: 10px;
-}
-
-.view.btn {
-  --accent: blue;
-  margin-left: 10px;
-}
 
 
